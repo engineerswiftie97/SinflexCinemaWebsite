@@ -1,0 +1,41 @@
+﻿@using Cinema.MODEL.Entities
+
+@model Member
+
+
+@{
+    ViewBag.Title = "Login";
+}
+
+
+@if (ViewBag.UyeOlmamissiniz != null)
+{
+    @ViewBag.UyeOlmamissiniz
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm())
+{
+    <div>
+        Username
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.UserName)
+    </div>
+    <div>
+        Password
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.Password)
+    </div>
+
+    <div>
+        <button class="btn btn-primary" onclick=" @Html.ActionLink("login", "Movie", new { @class = "btn btn-warning" })">
+            <span class="glyphicon glyphicon-user"></span>
+            
+
+        </button>
+    </div>
+}
+
